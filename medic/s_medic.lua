@@ -58,7 +58,7 @@ local callOuts = {}
 AddEvent("OnPackageStart", function()
     for k, v in pairs(MEDIC_SERVICE_NPC) do
         v.npcObject = CreateNPC(v.x, v.y, v.z, v.h)
-        
+        SetNPCPropertyValue(v.npcObject, "__preset", 16, true)
         table.insert(medicNpcIds, v.npcObject)
     end
     
@@ -77,6 +77,7 @@ AddEvent("OnPackageStart", function()
     
     for k, v in pairs(MEDIC_EQUIPMENT_NPC) do
         v.npcObject = CreateNPC(v.x, v.y, v.z, v.h)
+        SetNPCPropertyValue(v.npcObject, "__preset", 16, true)
         SetNPCAnimation(v.npcObject, "WALLLEAN04", true)
         table.insert(medicEquipmentNpcIds, v.npcObject)
     end
