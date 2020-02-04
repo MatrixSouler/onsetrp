@@ -19,6 +19,13 @@ local currentCallout
 
 local reviveScreenHUD
 
+AddEvent("OnNPCStreamIn", function(v)
+    local preset = GetNPCPropertyValue(v, "__preset")
+    if type(preset) == "number" then
+        SetNPCClothingPreset(v, preset)
+    end
+end)
+
 AddRemoteEvent("medic:setup", function(_medicNpcIds, _medicVehicleNpcIds, _medicGarageIds, _medicEquipmentNpcIds, _medicHospitalLocationIds)
     medicNpcIds = _medicNpcIds
     medicVehicleNpcIds = _medicVehicleNpcIds
