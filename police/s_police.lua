@@ -59,6 +59,7 @@ local policeEquipmentNpcIds = {}
 AddEvent("OnPackageStart", function()
     for k, v in pairs(POLICE_SERVICE_NPC) do
         v.npcObject = CreateNPC(v.x, v.y, v.z, v.h)
+        SetNPCPropertyValue(v.npcObject, "__preset", 13, true)
         SetNPCAnimation(v.npcObject, "WALLLEAN04", true)        
         table.insert(policeNpcIds, v.npcObject)
     end
@@ -72,12 +73,14 @@ AddEvent("OnPackageStart", function()
     
     for k, v in pairs(POLICE_VEHICLE_NPC) do
         v.npcObject = CreateNPC(v.x, v.y, v.z, v.h)
+        SetNPCPropertyValue(v.npcObject, "__preset", 13, true)
         SetNPCAnimation(v.npcObject, "WALLLEAN04", true)
         table.insert(policeVehicleNpcIds, v.npcObject)
     end
 
     for k, v in pairs(POLICE_EQUIPMENT_NPC) do
         v.npcObject = CreateNPC(v.x, v.y, v.z, v.h)
+        SetNPCPropertyValue(v.npcObject, "__preset", 13, true)
         table.insert(policeEquipmentNpcIds, v.npcObject)
     end
 end)
