@@ -56,13 +56,6 @@ local policeVehicleNpcIds = {}
 local policeGarageIds = {}
 local policeEquipmentNpcIds = {}
 
-AddEvent("OnNPCStreamIn", function(v)
-    local preset = GetNPCPropertyValue(v, "__preset")
-    if type(preset) == "number" then
-        SetNPCClothingPreset(v, preset)
-    end
-end)
-
 AddEvent("OnPackageStart", function()
     for k, v in pairs(POLICE_SERVICE_NPC) do
         v.npcObject = CreateNPC(v.x, v.y, v.z, v.h)
