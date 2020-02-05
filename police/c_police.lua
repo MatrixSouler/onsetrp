@@ -13,6 +13,13 @@ local policeVehicleNpcIds = {}
 local policeGarageIds = {}
 local policeEquipmentNpcIds = {}
 
+AddEvent("OnNPCStreamIn", function(v)
+    local preset = GetNPCPropertyValue(v, "__preset")
+    if type(preset) == "number" then
+        SetNPCClothingPreset(v, preset)
+    end
+end)
+
 AddRemoteEvent("police:setup", function(_policeNpcIds, _policeGarageIds, _policeVehicleNpcIds, _policeEquipmentNpcIds)
     policeNpcIds = _policeNpcIds
     policeGarageIds = _policeGarageIds
